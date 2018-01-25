@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <title>Suprise!</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+    <h1 id="surprise" onclick="dannyDevito()">Click me for a surprise.<br></h1>
+    <script>
+        var img = new Image();
+        var div = document.getElementById("surprise");
+
+        function dannyDevito() {
+          div.appendChild(img);
+        };
+      img.src = "https://i.redd.it/a8t22fsshc201.png";
+    </script>
+  </body>
+
+</html>
