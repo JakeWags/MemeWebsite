@@ -1,0 +1,47 @@
+#homepage {
+  background-color: white;
+}
+#navbar {
+  background-color: lightgray;
+}
+.navigation {
+  padding: 0 5px;
+  color: black;
+  font-family: verdana;
+}
+#welcome {
+  font-size:22px;
+}
+#intro {
+  font-family: verdana;
+  font-size: 16px;
+}
+#Brownbears {
+  font-family: verdana;
+}
+#titleBear {
+  font-family: Georgia;
+}
+#patrick {
+  border: 2px solid black;
+  float: right;
+  width: 300px;
+  height: 200px;
+  margin-right: 100px;
+  margin-top: 5px;
+}
+#maneater {
+  float: right;
+  width: 300px;
+  height: 150px;
+  margin-right: 300px;
+  margin-top: 20px;
+}
+#angryboy {
+  float: right;
+  width: 200px;
+  height: 160px;
+}
+.species {
+  color: gray;
+}
