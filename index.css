@@ -45,3 +45,11 @@
 .species {
   color: gray;
 }
+.devitoPictures {
+  float: left;
+  width: 200px;
+  height: 200px;
+  max-height: 0px;
+  transition: max-height 1s;
+  overflow: hidden;
+}
