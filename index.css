@@ -53,3 +53,19 @@
   transition: max-height 1s;
   overflow: hidden;
 }
+#devitoButton {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 24px;
+  width: 50%;
+}
+#devitoButton:hover {
+  background-color: blue;
+  color: white;
+}
+#devitoButton:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
