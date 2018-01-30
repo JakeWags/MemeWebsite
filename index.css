@@ -53,19 +53,36 @@
   transition: max-height 1s;
   overflow: hidden;
 }
-#devitoButton {
+#devitoButton,#clickme,#reset {
   background-color: white;
   color: black;
   border: 2px solid black;
   font-size: 24px;
   width: 50%;
 }
-#devitoButton:hover {
+#devitoButton,#clickme:hover {
   background-color: blue;
   color: white;
 }
-#devitoButton:active {
+#devitoButton,#clickme:active {
   background-color: blue;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+#reset:hover {
+  background-color: red;
+  color: white;
+}
+#reset:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#clicker {
+  width:300px;
+  height:200px;
+}
+#totalClicks {
+  font-size: 24px;
+  font-family: Georgia;
 }
