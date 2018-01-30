@@ -1,7 +1,7 @@
 var totalClicks = parseInt(localStorage.getItem("totalClicks")) || 0;
 //the OR zero just means that if localStorage.getItem("clicks") doesn't exist, use 0 instead
-var clickBonus = parseInt(localStorage.getItem("clickBonus")) || 1;\
-var upgradeCost = 100;
+var clickBonus = parseInt(localStorage.getItem("clickBonus")) || 1;
+var upgradeCost = localstorage.getItem("clickBonus") || 100;
 
 function addClick(){
     totalClicks += clickBonus;
@@ -24,6 +24,7 @@ function buyUpgrade(){
     increaseClickBonus(1);
     upgradeCost *= 1.1;
     document.getElementById("upgradeCost").innerHTML = upgradeCost;
+    localStorage.setItem("upgradeCost", upgradeCost);
   }
   else{
     document.getElementById("error").innerHTML = "Not enough money.";
