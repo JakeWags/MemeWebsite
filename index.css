@@ -60,11 +60,11 @@
   font-size: 24px;
   width: 50%;
 }
-#devitoButton,#clickme:hover {
+#devitoButton,#clickme,#upgrade:hover {
   background-color: blue;
   color: white;
 }
-#devitoButton,#clickme:active {
+#devitoButton,#clickme,#upgrade:active {
   background-color: blue;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
