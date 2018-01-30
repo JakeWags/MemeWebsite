@@ -4,6 +4,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script type="text/javascript" src="clicker.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <title>Clicker</title>
   </head>
   <body>
@@ -17,7 +18,8 @@
       <img id="clicker" src="https://coubsecure-s.akamaihd.net/get/b93/p/coub/simple/cw_timeline_pic/00bf8b41367/141c3f734f40c9d7d74c0/med_1471891539_image.jpg"><br />
     <button id="clickme" onclick="addClick()">Add <span id="clickBonus">1</span></button><br />
         <p id="totalClicks">Clicks: <span id="clicks"></span></p>
-    <button id="upgrade" onclick="buyUpgrade()">Upgrade: <span id="upgradeCost">100</span></button><br />
+    <button id="upgrade" onclick="purchaseUpgrade()">Upgrade: <span id="upgradeCost">100</span></button><br />
+    <p id="error"></p>
   </body>
 
 </html>
