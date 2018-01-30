@@ -21,7 +21,7 @@ function reset(){
 }
 function buyUpgrade(){
   if (totalClicks >= upgradeCost){
-    clickBonus++;
+    increaseClickBonus(1);
     upgradeCost *= 1.1;
     document.getElementById("upgradeCost").innerHTML = upgradeCost;
   }
