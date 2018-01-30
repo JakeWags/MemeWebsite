@@ -13,20 +13,18 @@ function increaseClickBonus(amount){
     document.getElementById("clickBonus").innerHTML = clickBonus;
     localStorage.setItem("clickBonus", clickBonus);
 }
+function buyUpgrade(){
+  if (totalClicks >= upgradeCost){
+    increaseClickBonus(1);
+    totalClicks -= upgradeCost;
+    upgradeCost *= 1.1;
+    document.getElementById("upgradeCost").innerHTML = upgradeCost;
+    localStorage.setItem("upgradeCost", upgradeCost);
+  }
+}
 function reset(){
   if(confirm("Are you sure?")){
     localStorage.clear();
     window.location.reload(false);
   }
 }
-function buyUpgrade(){
-  if (totalClicks >= upgradeCost){
-    increaseClickBonus(1);
-    upgradeCost *= 1.1;
-    document.getElementById("upgradeCost").innerHTML = upgradeCost;
-    localStorage.setItem("upgradeCost", upgradeCost);
-  }
-  else{
-    document.getElementById("error").innerHTML = "Not enough money.";
-  };
-};
