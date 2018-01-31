@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <script type="text/javascript" src="clicker.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <title>Clicker</title>
+    <title>Jake's Clicker</title>
   </head>
   <body>
     <nav id="navbar">
@@ -16,12 +16,21 @@
     <h1>Help the boys overcome their greatest enemy...time.</h1>
     <p id="warning"><strong>*Warning*</strong>Does not save if browsing in incognito mode<strong>*Warning*</strong> </p>
       <button id="reset" onclick="reset()">Reset</button><br /><br />
-      <p id="changeLog">Picture now changes upon upgrade!</p>
+      <p id="pictureUpdate">Picture now changes upon upgrade!</p><br />
       <img id="clicker" src="https://coubsecure-s.akamaihd.net/get/b93/p/coub/simple/cw_timeline_pic/00bf8b41367/141c3f734f40c9d7d74c0/med_1471891539_image.jpg"><br />
     <button id="clickme" onclick="addClick()">Add <span id="clickBonus">1</span></button><br />
         <p id="totalClicks">Clicks: <span id="clicks"></span></p>
     <button id="upgrade" onclick="purchaseUpgrade()">Upgrade: <span id="upgradeCost">100</span></button><br />
-    <p id="error"></p>
+    <p id="error"></p><br />
+    <ul id="changeLog">
+      <h3 id="changeLogHeader">Change Log</h3>
+      <li class="changeLogList">Changed scale rate of cost</li>
+      <li class="changeLogList">Picures change on upgrade</li>
+      <li class="changeLogList">Changed some button colors</li>
+      <li class="changeLogList">Added incognito warning</li>
+      <li class="changeLogList">Changed title from "Clicker" to "Jake's Clicker"</li>
+      <li class="changeLogList">Changed header from "Click Away!"</li>
+    </ul>
   </body>
 
 </html>

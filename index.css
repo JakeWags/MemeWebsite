@@ -102,8 +102,16 @@
 #upgrade:hover {
   background-color: orange;
 }
-#changeLog {
+#pictureUpdate {
   float: right;
   font-size: 24px;
   margin-right: 125px;
+}
+.changeLogList {
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+#changeLogHeader {
+  text-align: left;
 }
