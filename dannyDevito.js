@@ -1,5 +1,5 @@
 function dannyDevito () {
-    var images = ["https://i.redd.it/a8t22fsshc201.png",
+    var devitoImages = ["https://i.redd.it/a8t22fsshc201.png",
     "https://images-na.ssl-images-amazon.com/images/I/61I7P87y3AL._SL1000_.jpg",
     "https://nerdist.com/wp-content/uploads/2017/05/Ongo.jpg",
     "http://3.bp.blogspot.com/-3xnaGQBGJnM/UOq-FnsZ2ZI/AAAAAAAAAgA/G7g07c1h3TE/s1600/puggy+devito.jpg",
@@ -12,5 +12,5 @@ function dannyDevito () {
     "https://i.makeagif.com/media/9-13-2015/KNFtMr.gif",
     "https://i.imgur.com/J24brgR.gif"];
 
-    document.getElementById('devitoPng').src = images[Math.floor(Math.random()*images.length)];
+    document.getElementById('devitoPng').src = devitoImages[Math.floor(Math.random()*devitoImages.length)];
     }
