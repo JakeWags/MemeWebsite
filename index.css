@@ -53,28 +53,35 @@
   transition: max-height 1s;
   overflow: hidden;
 }
-#devitoButton,#clickme,#reset {
+#devitoButton,#clickme {
   background-color: white;
   color: black;
   border: 2px solid black;
   font-size: 24px;
   width: 50%;
 }
-#devitoButton,#clickme,#upgrade:hover {
+#devitoButton,#clickme:hover {
   background-color: blue;
   color: white;
 }
-#devitoButton,#clickme,#upgrade:active {
+#devitoButton,#clickme:active {
   background-color: blue;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-#reset:hover {
+#reset {
   background-color: red;
   color: white;
+  border: 2px solid black;
+  font-size: 24px;
+  width: 50%;
+}
+#reset:hover {
+  background-color: white;
+  color: red;
 }
 #reset:active {
-  background-color: red;
+  background-color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -91,4 +98,12 @@
   color: black;
   border: 2px solid black;
   font-size: 16px;
+}
+#upgrade:hover {
+  background-color: orange;
+}
+#changeLog {
+  float: right;
+  font-size: 24px;
+  margin-right: 125px;
 }
