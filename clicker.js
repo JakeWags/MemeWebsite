@@ -2,7 +2,7 @@ class Clicker{
   constructor(){
     this._totalClicks = parseInt(localStorage.getItem("totalClicks")) || 0;
     this._clickBonus = parseInt(localStorage.getItem("clickBonus")) || 1;
-    this._upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 10;
+    this._upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 100;
     this._clickerImageSelector = parseInt(localStorage.getItem("clickerImageSelector")) || 0;
     this._clickerImages = [
      "https://coubsecure-s.akamaihd.net/get/b93/p/coub/simple/cw_timeline_pic/00bf8b41367/141c3f734f40c9d7d74c0/med_1471891539_image.jpg",
