@@ -102,9 +102,9 @@ function reset(){
   click1.resetClick();
 }
 function purchaseUpgrade(){
-  if (click1.clickBonus >= 10 && < 20){
+  if (click1.clickBonus >= 10 && click1.clickBonus< 20){
     click1.buyUpgrade(1, 1.25);
-  } else if(click1.clickBonus >= 20 && < 30){
+  } else if(click1.clickBonus >= 20 && click1.clickBonus < 30){
     click1.buyUpgrade(1, 1.10);
   } else if(click1.clickBonus >= 30){
     click1.buyUpgrade(1, 1.05);
