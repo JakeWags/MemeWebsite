@@ -1,0 +1,26 @@
+#navbar {
+  background-color: lightgray;
+}
+.navigation {
+  padding: 0 5px;
+  color: black;
+  font-family: verdana;
+}
+#welcome {
+  font-size:22px;
+}
+#intro {
+  font-family: verdana;
+  font-size: 16px;
+}
+#Brownbears {
+  font-family: verdana;
+}
+#patrick {
+  border: 2px solid black;
+  float: right;
+  width: 300px;
+  height: 200px;
+  margin-right: 100px;
+  margin-top: 5px;
+}
