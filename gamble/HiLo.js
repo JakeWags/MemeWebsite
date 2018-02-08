@@ -94,6 +94,8 @@ changeBet(amount) {
       this._bet = 5000;
       }
       this.update();
+    } else if (this._bet === 5000 && amount === 5) {
+      alert(“The max bet is $5000”);
     } else {
     this._bet += amount;
     this.update();
