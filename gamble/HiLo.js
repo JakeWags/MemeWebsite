@@ -88,7 +88,7 @@ changeBet(amount) {
     } else if (amount === -5 && this._bet === 10) {
       alert("minimum bet is 10");
     } else if (amount === 5 && this._bet === 5000) {
-      alert(“maximum bet is 5000”);
+      alert("maximum bet is 5000");
     } else if (amount === this._money) {
       if (amount < 5000){
       this._bet = amount;
