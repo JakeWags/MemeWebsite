@@ -1,8 +1,4 @@
-class Character {
-  constructor() {
-    this._money = parseInt(localStorage.getItem("money")) || 100;
-  }
-}
+
 class HiLo {
   constructor() {
     this._oldNumber;
@@ -98,6 +94,10 @@ changeBet(amount) {
     this._bet += amount;
     this.update();
 }}};
+resetMyBet() {
+  this._bet = 10;
+  this.update();
+}
 }
 var player1 = new HiLo();
  function newGame() {
@@ -120,4 +120,7 @@ function decreaseBet() {
 }
 function allIn() {
   player1.changeBet(player1.money);
+}
+function resetBet() {
+  player1.resetMyBet();
 }
