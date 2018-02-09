@@ -7,7 +7,7 @@ class HiLo {
     this._statement;
     this._bet = 10;
     this._maxBet = parseInt(localStorage.getItem("maxBet")) || 5000;
-    this._maxBetCost = parseInt(localStorage.getItem("maxBetCost")) || 100000;
+    this._maxBetCost = parseInt(localStorage.getItem("maxBetCost")) || 1000000;
   }
 
 get oldNumber() {
