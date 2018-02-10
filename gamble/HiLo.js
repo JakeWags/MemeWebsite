@@ -1,9 +1,23 @@
-
-class HiLo {
+class Gambler {
+  constructor(name) {
+    this._name = "Gambler";
+    this._money = parseInt(localStorage.getItem("money")) || 100;
+  }
+  get money() {
+    return this._money;
+  }
+  restartGame() {
+  if(confirm("Are you sure?")){
+    localStorage.clear();
+    window.location.reload(false);
+    }
+  }
+}
+class HiLo extends Gambler{
   constructor() {
+    super(name);
     this._oldNumber;
     this._newNumber;
-    this._money = parseInt(localStorage.getItem("money")) || 100;
     this._statement;
     this._bet = 10;
     this._maxBet = parseInt(localStorage.getItem("maxBet")) || 5000;
@@ -15,15 +29,6 @@ get oldNumber() {
 }
 get newNumber() {
   return this._newNumber;
-}
-get money() {
-  return this._money;
-}
-restartGame() {
-  if(confirm("Are you sure?")){
-    localStorage.clear();
-    window.location.reload(false);
-  }
 }
 update() {
   this.updateStorage();
@@ -69,7 +74,7 @@ guessHigher() {
     this.resetMyBet();
   }
   this.updateNumber();
-};
+}
 guessLower() {
   if(this._money >= this._bet){
     this._newNumber = this.generateNumber();
@@ -88,7 +93,7 @@ guessLower() {
     this.resetMyBet();
   }
   this.updateNumber();
-};
+}
 updateNumber(){
   document.getElementById("newNumberValue").innerHTML = this._newNumber;
   document.getElementById("newNumber").innerHTML = this._statement;
@@ -98,7 +103,7 @@ updateNumber(){
 changeBet(amount) {
   if (this._bet >= 10) {
     if (this._bet >= this._money && amount === 5) {
-      alert("You can't bet more than you have.")
+      alert("You can't bet more than you have.");
     } else if (amount === -5 && this._bet === 10) {
       alert("minimum bet is 10");
     } else if (amount === 5 && this._bet === this._maxBet) {
@@ -113,7 +118,7 @@ changeBet(amount) {
     } else {
     this._bet += amount;
     this.update();
-}}};
+}}}
 changeMaxBet() {
   if(this._money >= this._maxBetCost) {
   this._money -= this._maxBetCost;
@@ -121,7 +126,7 @@ changeMaxBet() {
   this._maxBetCost *= 10;
   this.update();
 } else {
-  alert("You don't have enough money.")
+  alert("You don't have enough money.");
 }
 }
 resetMyBet() {
