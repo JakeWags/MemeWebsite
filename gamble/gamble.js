@@ -7,7 +7,7 @@ class Gambler {
     return this._money;
   }
   restartGame() {
-  if(confirm("Are you sure?")){
+  if(confirm("Are you sure? This removes all data from every gambling game.")){
     localStorage.clear();
     window.location.reload(false);
     }
@@ -135,30 +135,3 @@ resetMyBet() {
 }
 }
 var player1 = new HiLo();
- function newGame() {
-  player1.makeNewGame();
- }
-function restart() {
-  player1.restartGame();
-}
-function higher() {
-  player1.guessHigher();
-}
-function lower() {
-  player1.guessLower();
-}
-function increaseBet() {
-  player1.changeBet(5);
-}
-function decreaseBet() {
-  player1.changeBet(-5);
-}
-function allIn() {
-  player1.changeBet(player1.money);
-}
-function maxBet() {
-  player1.changeMaxBet();
-}
-function resetBet() {
-  player1.resetMyBet();
-}
