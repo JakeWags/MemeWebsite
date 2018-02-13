@@ -33,9 +33,9 @@
       <img id="die2" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
       <img id="die1" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
       <button id="play" onclick="p1.play()">Roll</button>
-      <button id="increaseBet" onclick="updateBet(5)">Bet +5</button>
-      <button id="decreaseBet" onclick="updateBet(-5)">Bet -5</button>
-      <button id="allIn" onclick="updateBet(p1.money)">Max bet!</button>
+      <button id="increaseBet" onclick="p1.changeBet(5)">Bet +5</button>
+      <button id="decreaseBet" onclick="p1.changeBet(-5)">Bet -5</button>
+      <button id="allIn" onclick="p1.changeBet(p1.money)">Max bet!</button>
       <button id="resetBet" onclick="p1.resetMyBet()">Reset Bet</button><br>
       <p id="display">Click roll to begin!</p>
       <p id="dice1">You rolled a <span id="display1">___</span> and a <span id="display2">___</span><br>
