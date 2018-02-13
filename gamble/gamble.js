@@ -256,8 +256,3 @@ play() {
 }
 var p1 = new Craps(); //new craps game
 var player1 = new HiLo(); //new hilo game
-function updateBet(amount) {
-  if(p1.isFirstRoll){
-    p1.changeBet(amount);
-}
-}
