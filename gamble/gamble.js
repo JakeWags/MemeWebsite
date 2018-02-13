@@ -176,6 +176,10 @@ get die2() {
   return this._die2;
 }
 
+get isFirstRill() {
+  return this._isFirstRoll;
+}
+
 update() {
   this.updateStorage()
   document.getElementById("display1").innerHTML = this._die1;
@@ -252,3 +256,8 @@ play() {
 }
 var p1 = new Craps(); //new craps game
 var player1 = new HiLo(); //new hilo game
+function updateBet(amount) {
+  if(p1.isFirstRoll == true){
+    p1.changeBet(amount);
+}
+}
