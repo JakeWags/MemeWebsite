@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oh my</title>
+    <link rel="stylesheet" type="text/css" href="dice.css">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <nav id="navbar">
+      <a class="navigation" href="../index.html">Home</a>
+      <a class="navigation" href="../Bears/Bears.html">Bears</a>
+      <a class="navigation" href="../clicker/clicker.html">Clicker</a>
+      <a class="navigation" href="../gamble/homepage.html">Gamble</a>
+    </nav>
+    <h2 id="headerTitle">The dice will decide your fate.</h2>
+    <div id="instructionsArea">
+      <h6 id="instructionsTitle">Rules/Explanation</h6>
+      <p id="explanation">This game is essentially the "Call Out" phase of Craps.<br><br>
+        The way it works is you roll two dice and add up the rolls. Simple!<br><br>
+        On the very first roll, a 7 or an 11 results in the player winning, whereas a 2, 3, or 12 results in a loss.<br><br>
+        If none of these are rolled, the number rolled is set as the "point."<br><br>
+        The player rolls again. If the numbers rolled don't add up to the "point" or 7, they roll again.<br><br>
+        If the "point" value is rolled, the player wins. If 7 is rolled, the house wins.<br><br>
+        Have fun!<br><br>
+        Made by Jake Wagoner.
+      </p>
+    </div>
+    <button id="restart" onclick="p1.restartGame()">Restart</button>
+    <p id="betDisplay"><strong>Current bet:</strong> $<span id="currentBet">10</span> <em>per guess</em></p>
+    <p id="maxBetDisplay"><strong>Current Max Bet:</strong> $<span id="currentMaxBet">5000</span> <em>per guess</em></p>
+    <button id="changeMaxBet" onclick="p1.changeMaxBet()">Upgrade Max bet: $<span id="maxBetCost">1000000</span></button><br><br>
+    <div id="gameSpace">
+      <img id="die2" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
+      <img id="die1" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
+      <button id="play" onclick="p1.play()">Roll</button>
+      <button id="increaseBet" onclick="p1.changeBet(5)">Bet +5</button>
+      <button id="decreaseBet" onclick="p1.changeBet(-5)">Bet -5</button>
+      <button id="allIn" onclick="p1.changeBet(player1.money)">Max bet!</button>
+      <button id="resetBet" onclick="p1.resetMyBet()">Reset Bet</button><br>
+      <p id="display">Click roll to begin!</p>
+      <p id="dice1">You rolled a <span id="display1">___</span> and a <span id="display2">___</span><br>
+      The point is <span id="point">nothing</span></p>
+      <p id="gameStatus">Start a game.</p>
+    </div><br />
+    <h3 id="cash">Wallet: $<span id="balance">100</span></h3>
+    <p id="submission">Any suggestions or bug reports can be filled out <a href="https://goo.gl/forms/retgDB39VLR6Fwyl1">here</a>.</p>
+    <h4 id="error"></h4>
+    <script type="text/javascript" src="gamble.js"></script>
+  </body>
+</html>

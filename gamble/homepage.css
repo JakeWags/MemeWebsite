@@ -6,8 +6,8 @@
   color: black;
   font-family: verdana;
 }
-#HiLo {
-  font-size: 26px;
-  font-family: Garamond;
-  color: blue;
+.games {
+  border: 2px solid black;
+  height: 150px;
+  width: 150px;
 }

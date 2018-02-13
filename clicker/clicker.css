@@ -6,6 +6,10 @@
   color: black;
   font-family: verdana;
 }
+#submission {
+  font-family: verdana;
+  font-size: 16px;
+}
 #clickme {
   background-color: white;
   color: black;
