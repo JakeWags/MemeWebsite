@@ -30,7 +30,7 @@ class Gambler { //parent class for every game
   }
 
   changeBet(amount) {
-    if (this._bet >= 10 && this._isFirstRoll == true) {
+    if (this._bet >= 10) {
       if (this._bet >= this._money && amount == 5) {
         alert("You can't bet more than you have.");
       } else if (amount == -5 && this._bet == 10) {
