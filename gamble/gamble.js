@@ -1,10 +1,10 @@
 class Gambler { //parent class for every game
-  constructor(name) {
-    this._money = parseInt(localStorage.getItem("money")) || 100;
-    this._bet = 10;
-    this._maxBet = parseInt(localStorage.getItem("maxBet")) || 5000;
-    this._maxBetCost = parseInt(localStorage.getItem("maxBetCost")) || 1000000;
-  } //set money equal to whatever is stored or 100
+  constructor() {
+    this._money = parseInt(localStorage.getItem("money")) || 100; //money is 100 or locally stored info
+    this._bet = 10; //bet is set to 10
+    this._maxBet = parseInt(localStorage.getItem("maxBet")) || 5000; //max bet is 5000 or locally stored info
+    this._maxBetCost = parseInt(localStorage.getItem("maxBetCost")) || 1000000; //upgrade cost is 1m or locally stored info
+  }
 
   get money() {
     return this._money;
@@ -29,55 +29,56 @@ class Gambler { //parent class for every game
     }
   }
 
-  updateStorage() {
+  updateStorage() { //updates stored information
     localStorage.setItem("money", this._money);
     localStorage.setItem("maxBet", this._maxBet);
     localStorage.setItem("maxBetCost", this._maxBetCost);
   }
 
-  changeMoney(change) {
+  changeMoney(change) { //change money
     this._money += change;
-    this.update();
   }
 
-  changeBet(amount) {
-    if (this._bet >= 10) {
-      if (this._bet >= this._money && amount == 5) {
+  changeBet(amount) { //changes bet
+    if (this._bet >= 10) { //if bet is above or equal to 10
+      if (this._bet >= this._money && amount == 5) { //if too much money and adding 5
         alert("You can't bet more than you have.");
-      } else if (amount == -5 && this._bet == 10) {
-        alert("minimum bet is 10");
-      } else if (amount == 5 && this._bet == this._maxBet) {
-        alert("maximum bet is " + this._maxBet);
-      } else if (amount == this._money) {
-        if (amount < this._maxBet){
-        this._bet = amount;
-        } else {
-        this._bet = this._maxBet;
+      } else if (amount == -5 && this._bet == 10) { //if amount is -5 and bet is 10
+        alert("minimum bet is 10"); //minimum bet is 10
+      } else if (amount == 5 && this._bet == this._maxBet) { //if amount is 5 and bet is equal to max bet
+        alert("maximum bet is " + this._maxBet); //max bet is ____
+      } else if (amount == this._money) { //if all in(max bet)
+        if (amount < this._maxBet){ //if amount is less than max bet
+        this._bet = amount; //bet is equal to amount changed
+      } else { //else if amount is greater than or equal to the max bet
+        this._bet = this._maxBet; //bet is equal to the max bet
         }
-        this.update();
-      } else {
-      this._bet += amount;
-      this.update();
-  }}}
+    } else { //if bet is less than amount
+      this._bet += amount; //add amount to bet
+  }
+}
+this.update(); //update display
+}
 
-  changeMaxBet() {
-    if(this._money >= this._maxBetCost) {
-    this._money -= this._maxBetCost;
-    this._maxBet *= 10;
+  changeMaxBet() { //change max bet
+    if(this._money >= this._maxBetCost) { //if enough money
+    this._money -= this._maxBetCost; //max bet cost subtracted from wallet
+    this._maxBet *= 10; //scale maxbet and maxbetcost by 10
     this._maxBetCost *= 10;
-    this.update();
-  } else {
+    this.update(); //update display
+  } else { //if not enough money
     alert("You don't have enough money.");
   }
   }
 
-  resetMyBet() {
-    this._bet = 10;
-    this.update();
+  resetMyBet() { //reset bet
+    this._bet = 10; //sets bet to 10
+    this.update(); //updates display
   }
 }
 
-class HiLo extends Gambler{ //HiLo game class child of gambler
+ //HiLo game class child of gambler
+class HiLo extends Gambler{
   constructor() {
     super(); //calls parent constructor
     this._oldNumber;
@@ -93,7 +94,8 @@ get newNumber() {
   return this._newNumber;
 }
 
-update() { //updates display
+ //updates display
+update() {
   this.updateStorage(); //updates storage
   document.getElementById("numberDisplay").innerHTML = this._oldNumber;
   document.getElementById("balance").innerHTML = this._money;
@@ -103,17 +105,20 @@ update() { //updates display
   document.getElementById("currentMaxBet").innerHTML = this._maxBet;
 }
 
-makeNewGame() { //new game
+//new game
+makeNewGame() {
   this._oldNumber = this.generateNumber(); //old number is equal to generated number
   this.update(); //updates display
   document.getElementById("gameButton").onclick = ""; //disables newgame button
 }
 
-generateNumber() { //generates random number
+//generates random number
+generateNumber() {
   return Math.floor(Math.random() * 20+1); //number 1-20
 }
 
-guessHigher() { //if higher is pressed
+//if higher is pressed
+guessHigher() {
   if(this._money >= this._bet){ //if enough money
     this._newNumber = this.generateNumber(); //generate new number
     if(this._oldNumber < this._newNumber) { //if old is less than new (win)
@@ -133,7 +138,8 @@ guessHigher() { //if higher is pressed
   this.updateNumber(); //updatenumber function
 }
 
-guessLower() { //if lower is pressed
+//if lower is pressed
+guessLower() {
   if(this._money >= this._bet){ //if enough money
     this._newNumber = this.generateNumber(); //generate new number
     if(this._oldNumber > this._newNumber) { //if old is greater than new (win)
@@ -153,7 +159,8 @@ guessLower() { //if lower is pressed
   this.updateNumber(); //updateNumber function
 }
 
-updateNumber(){ //updates number display
+//updates number display
+updateNumber(){
   document.getElementById("newNumberValue").innerHTML = this._newNumber;
   document.getElementById("newNumber").innerHTML = this._statement;
   this._oldNumber = this._newNumber; //old number is now new number
@@ -161,7 +168,8 @@ updateNumber(){ //updates number display
 }
 }
 
-class Craps extends Gambler{ //class for craps is child of gambler
+//class for craps is child of gambler
+class Craps extends Gambler{
   constructor() {
     super(); //calls parent constructor
     this._die1;
@@ -191,7 +199,8 @@ get isFirstRill() {
   return this._isFirstRoll;
 }
 
-update() { //updates display
+//updates display
+update() {
   this.updateStorage()
   document.getElementById("display1").innerHTML = this._die1;
   document.getElementById("display2").innerHTML = this._die2;
@@ -205,31 +214,36 @@ update() { //updates display
   document.getElementById("die2").src = this._dieImages[this._die2 - 1];
 }
 
-rollDice() { //rolls the dice
+//rolls the dice
+rollDice() {
   this._die1 = Math.floor(Math.random()*6+1); //1-6
   this._die2 = Math.floor(Math.random()*6+1); //1-6
   this._sumOfRoll = this._die1 + this._die2; //adds each and sets to sumOfRoll
 }
 
-win() {  //if the player wins
+//if the player wins
+win() {
   this._gameStatus = "You win!"; //displays "You win!"
   this.changeMoney(this._bet); //adds bet to wallet
   this.endGame(); //ends game
 }
 
-lose() { //if player loses
+//if player loses
+lose() {
   this._gameStatus = "You lost."; //displays "You lost."
   this.changeMoney(-this._bet); //subtracts bet from wallet
   this.endGame(); //ends game
 }
 
-endGame() { //end game function
+//end game function
+endGame() {
   this.update(); //updates display
   this._point = "not needed."; //sets point equal to "not needed."
   this._isFirstRoll = true; //resets game
 }
 
-play() { //main play function
+//main play function
+play() {
   if (this._money >= this._bet) { //if more money than bet amount
     if (this._isFirstRoll) { //if first roll
       this.rollDice(); //roll dice function
