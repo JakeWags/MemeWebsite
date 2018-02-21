@@ -77,9 +77,9 @@ class Gambler { //parent class for every game
   }
 }
 
-class HiLo extends Gambler{ //HiLo game class
+class HiLo extends Gambler{ //HiLo game class child of gambler
   constructor() {
-    super();
+    super(); //calls parent constructor
     this._oldNumber;
     this._newNumber;
     this._statement;
@@ -93,8 +93,8 @@ get newNumber() {
   return this._newNumber;
 }
 
-update() {
-  this.updateStorage();
+update() { //updates display
+  this.updateStorage(); //updates storage
   document.getElementById("numberDisplay").innerHTML = this._oldNumber;
   document.getElementById("balance").innerHTML = this._money;
   document.getElementById("newNumberValue").innerHTML = "";
@@ -103,61 +103,61 @@ update() {
   document.getElementById("currentMaxBet").innerHTML = this._maxBet;
 }
 
-makeNewGame() {
-  this._oldNumber = this.generateNumber();
-  this.update();
-  document.getElementById("gameButton").onclick = "";
+makeNewGame() { //new game
+  this._oldNumber = this.generateNumber(); //old number is equal to generated number
+  this.update(); //updates display
+  document.getElementById("gameButton").onclick = ""; //disables newgame button
 }
 
-generateNumber() {
-  return Math.floor(Math.random() * 20+1);
+generateNumber() { //generates random number
+  return Math.floor(Math.random() * 20+1); //number 1-20
 }
 
-guessHigher() {
-  if(this._money >= this._bet){
-    this._newNumber = this.generateNumber();
-    if(this._oldNumber < this._newNumber) {
-      this.changeMoney(this._bet);
-      this._statement = "higher.";
-    } else if(this._oldNumber == this._newNumber) {
-      this.changeMoney(-this._bet);
-      this._statement = "equal.";
-    } else {
-      this.changeMoney(-this._bet);
-      this._statement = "lower.";
+guessHigher() { //if higher is pressed
+  if(this._money >= this._bet){ //if enough money
+    this._newNumber = this.generateNumber(); //generate new number
+    if(this._oldNumber < this._newNumber) { //if old is less than new (win)
+      this.changeMoney(this._bet); //add bet to wallet
+      this._statement = "higher."; //change statement to "higher."
+    } else if(this._oldNumber == this._newNumber) { //else if old is equal to new
+      this.changeMoney(-this._bet); //subtract bet from wallet
+      this._statement = "equal."; //change statement to "equal."
+    } else { //if old is greater than new (lose)
+      this.changeMoney(-this._bet); //subtract money from wallet
+      this._statement = "lower."; //change statement to "lower."
     }
-  } else {
+  } else { //if not enough money for bet
     alert("Not enough money for that bet.");
-    this.resetMyBet();
+    this.resetMyBet(); //reset bet to 10
   }
-  this.updateNumber();
+  this.updateNumber(); //updatenumber function
 }
 
-guessLower() {
-  if(this._money >= this._bet){
-    this._newNumber = this.generateNumber();
-    if(this._oldNumber > this._newNumber) {
-      this.changeMoney(this._bet);
-      this._statement = "lower.";
-    } else if(this._oldNumber == this._newNumber) {
-      this.changeMoney(-this._bet);
-      this._statement = "equal.";
-    } else {
-      this.changeMoney(-this._bet);
-      this._statement = "higher.";
+guessLower() { //if lower is pressed
+  if(this._money >= this._bet){ //if enough money
+    this._newNumber = this.generateNumber(); //generate new number
+    if(this._oldNumber > this._newNumber) { //if old is greater than new (win)
+      this.changeMoney(this._bet); //add bet to wallet
+      this._statement = "lower."; //change statement to "lower."
+    } else if(this._oldNumber == this._newNumber) { //else if old is equal to new
+      this.changeMoney(-this._bet); //subtract bet from wallet
+      this._statement = "equal."; //change statement to "equal."
+    } else { //if old is less than new (lose)
+      this.changeMoney(-this._bet); //subtract bet from wallet
+      this._statement = "higher."; //change statement to "higher."
     }
-  } else {
+  } else { //if not enough money
     alert("Not enough money for that bet.");
-    this.resetMyBet();
+    this.resetMyBet(); //reset bet to 10
   }
-  this.updateNumber();
+  this.updateNumber(); //updateNumber function
 }
 
-updateNumber(){
+updateNumber(){ //updates number display
   document.getElementById("newNumberValue").innerHTML = this._newNumber;
   document.getElementById("newNumber").innerHTML = this._statement;
-  this._oldNumber = this._newNumber;
-  this.update();
+  this._oldNumber = this._newNumber; //old number is now new number
+  this.update(); //update overall display
 }
 }
 
