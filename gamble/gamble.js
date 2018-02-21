@@ -1,6 +1,5 @@
 class Gambler { //parent class for every game
   constructor(name) {
-    this._name = "Gambler"; //set player name
     this._money = parseInt(localStorage.getItem("money")) || 100;
     this._bet = 10;
     this._maxBet = parseInt(localStorage.getItem("maxBet")) || 5000;
@@ -9,6 +8,18 @@ class Gambler { //parent class for every game
 
   get money() {
     return this._money;
+  }
+
+  get bet() {
+    return this._bet;
+  }
+
+  get maxBet() {
+    return this._maxBet;
+  }
+
+  get maxBetCost() {
+    return this._maxBetCost;
   }
 
   restartGame() { //restart all stats
@@ -68,7 +79,7 @@ class Gambler { //parent class for every game
 
 class HiLo extends Gambler{ //HiLo game class
   constructor() {
-    super(name);
+    super();
     this._oldNumber;
     this._newNumber;
     this._statement;
