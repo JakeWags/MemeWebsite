@@ -161,22 +161,22 @@ updateNumber(){
 }
 }
 
-class Craps extends Gambler{
+class Craps extends Gambler{ //class for craps is child of gambler
   constructor() {
-    super();
+    super(); //calls parent constructor
     this._die1;
     this._die2;
     this._sumOfRoll;
     this._point;
-    this._isFirstRoll = true;
-    this._gameStatus = "Roll!";
-    this._dieImages = [
-      "https://image.flaticon.com/icons/svg/0/751.svg",
-      "https://image.flaticon.com/icons/svg/0/2.svg",
-      "https://image.flaticon.com/icons/svg/0/255.svg",
-      "https://image.flaticon.com/icons/svg/0/963.svg",
-      "https://image.flaticon.com/icons/svg/0/780.svg",
-      "https://image.flaticon.com/icons/svg/0/165.svg"]
+    this._isFirstRoll = true; //first roll of game
+    this._gameStatus = "Roll!"; //tells the player to roll
+    this._dieImages = [ //array for the die images
+      "https://image.flaticon.com/icons/svg/0/751.svg", //1
+      "https://image.flaticon.com/icons/svg/0/2.svg", //2
+      "https://image.flaticon.com/icons/svg/0/255.svg", //3
+      "https://image.flaticon.com/icons/svg/0/963.svg", //4
+      "https://image.flaticon.com/icons/svg/0/780.svg", //5
+      "https://image.flaticon.com/icons/svg/0/165.svg"] //6
 }
 
 get die1() {
@@ -191,7 +191,7 @@ get isFirstRill() {
   return this._isFirstRoll;
 }
 
-update() {
+update() { //updates display
   this.updateStorage()
   document.getElementById("display1").innerHTML = this._die1;
   document.getElementById("display2").innerHTML = this._die2;
@@ -205,63 +205,60 @@ update() {
   document.getElementById("die2").src = this._dieImages[this._die2 - 1];
 }
 
-rollDice() {
-  this._die1 = Math.floor(Math.random()*6+1);
-  this._die2 = Math.floor(Math.random()*6+1);
-  this._sumOfRoll = this._die1 + this._die2;
+rollDice() { //rolls the dice
+  this._die1 = Math.floor(Math.random()*6+1); //1-6
+  this._die2 = Math.floor(Math.random()*6+1); //1-6
+  this._sumOfRoll = this._die1 + this._die2; //adds each and sets to sumOfRoll
 }
 
-win() {
-  this._gameStatus = "You win!";
-  this.changeMoney(this._bet);
-  this.endGame();
+win() {  //if the player wins
+  this._gameStatus = "You win!"; //displays "You win!"
+  this.changeMoney(this._bet); //adds bet to wallet
+  this.endGame(); //ends game
 }
 
-lose() {
-  this._gameStatus = "You lost.";
-  this.changeMoney(-this._bet);
-  this.endGame();
+lose() { //if player loses
+  this._gameStatus = "You lost."; //displays "You lost."
+  this.changeMoney(-this._bet); //subtracts bet from wallet
+  this.endGame(); //ends game
 }
 
-endGame() {
-  this.update();
-  this._point = "not needed.";
-  this._isFirstRoll = true;
+endGame() { //end game function
+  this.update(); //updates display
+  this._point = "not needed."; //sets point equal to "not needed."
+  this._isFirstRoll = true; //resets game
 }
 
-play() {
-  if (this._money >= this._bet) {
+play() { //main play function
+  if (this._money >= this._bet) { //if more money than bet amount
     if (this._isFirstRoll) { //if first roll
-      this.rollDice(); //roll dice
+      this.rollDice(); //roll dice function
       switch (this._sumOfRoll) {
-        case 7: case 11: //if 7 or 11 (natural) player wins
-          this._point;
-          this.win();
-          break;
+        case 7: case 11: //if sum is 7 or 11 (natural) player wins
+          this.win(); //win function
+          break; //end of case
           case 2: case 3: case 12: //if 2, 3, or 12, house wins
-          this._point;
-          this.lose();
-          break;
-          default:
-          this._point = this._sumOfRoll;
+          this.lose(); //lose function
+          break; //end of case
+          default: //if none of the above
+          this._point = this._sumOfRoll; //point is equal to sum
           this._gameStatus = "A 7 loses and a " + this._point + " wins!"; //if none of these, keep going
-          this._isFirstRoll = false;
-          this.update();
+          this._isFirstRoll = false; //sets firstroll to false
+          this.update(); //updates display
         }
-    } else {
-      this.rollDice();
-        if (this._sumOfRoll == this._point) {
-          this.win();
-        } else if (this._sumOfRoll == 7) {
-          this.lose();
-        } else {
-          this._gameStatus = "A 7 loses and a " + this._point + " wins!";
-          this.update();
+    } else { //if not first roll
+      this.rollDice(); //roll dice
+        if (this._sumOfRoll == this._point) { //if sum is equal to point
+          this.win(); //win function
+        } else if (this._sumOfRoll == 7) { //else if sum is equal to 7
+          this.lose(); //lose function
+        } else { //if none of the above
+          this.update(); //update display
         }
   }
-} else {
+} else { //if not enough money for bet
   alert("You don't have enough money for that bet.");
-  this.resetBet();
+  this.resetBet(); //resets bet to 10
 }
 }
 }
