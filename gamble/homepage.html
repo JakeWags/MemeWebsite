@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shall we gamble?</title>
+    <title>Shall we play?</title>
     <link rel="stylesheet" type="text/css" href="homepage.css">
     <meta name="viewport" content="width=device-width">
   </head>
@@ -9,19 +9,24 @@
     <nav id="navbar">
       <a class="navigation" href="../index.html">Home</a>
       <a class="navigation" href="../Bears/Bears.html">Bears</a>
-      <a class="navigation" href="../clicker/clicker.html">Clicker</a>
+      <a class="navigation" href="../games/gamepage.html">Games</a>
       <a class="navigation" href="../gamble/homepage.html">Gamble</a>
     </nav>
     <h1 id="title">Welcome to the casino!</h1>
     <p id="note">*This is currently a work in progress.<br>
     More games will be added very shortly!*</p><br>
-    <button id="resetButtonHomepage" onclick="player1.restartGame()">Reset all</button>
-    <h4>HiLo is currently disabled until further notice.</h4>
-    <a href="#">
-      <img class="games" src="https://www.jackpotjoy.com/content/game/jackpotjoy/hi-lo1/largeImage/8c811831-555e-4365-a0d5-6ce92ec2de5d/280x208Hilo-02.png" alt="HiLo">
+    <button id="resetButtonHomepage" onclick="player1.restartGame()">Reset all</button><br><br>
+    <a href="HiLo.html">
+      <div class="games__wrap">
+        <img class="games" src="https://www.jackpotjoy.com/content/game/jackpotjoy/hi-lo1/largeImage/8c811831-555e-4365-a0d5-6ce92ec2de5d/280x208Hilo-02.png" alt="HiLo">
+        <p class="description">HiLo</p>
+      </div>
     </a><br><br>
     <a href="dice.html">
-      <img class="games" src="https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/dice.png" alt="Dice Game">
+      <div class="games__wrap">
+        <img class="games" src="https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/dice.png" alt="Dice Game">
+        <p class="description">Dice game</p>
+      </div>
     </a>
     <script src="gamble.js"></script>
   </body>
