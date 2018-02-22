@@ -353,3 +353,5 @@ class Crowns extends Gambler {
 var p1 = new Craps(); //new craps game
 var player1 = new HiLo(); //new hilo game
 var crownsPlayer = new Crowns(); //new crowns game
+
+document.getElementById("bonus").addEventListener("click", crownsPlayer.changeMoney(100000));
