@@ -7,14 +7,14 @@
   font-family: verdana;
 }
 .games {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
 }
 .games__wrap {
   position: relative;
   border: 2px solid black;
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
 }
 .games__wrap:hover .description {
   visibility: visible;

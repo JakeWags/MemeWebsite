@@ -172,10 +172,10 @@ updateNumber(){
 class Craps extends Gambler{
   constructor() {
     super(); //calls parent constructor
+    this._point;
     this._die1;
     this._die2;
     this._sumOfRoll;
-    this._point;
     this._isFirstRoll = true; //first roll of game
     this._gameStatus = "Roll!"; //tells the player to roll
     this._dieImages = [ //array for the die images
@@ -214,7 +214,7 @@ update() {
   document.getElementById("die2").src = this._dieImages[this._die2 - 1];
 }
 
-//rolls the dice
+//rolls two dice
 rollDice() {
   this._die1 = Math.floor(Math.random()*6+1); //1-6
   this._die2 = Math.floor(Math.random()*6+1); //1-6
@@ -276,5 +276,80 @@ play() {
 }
 }
 }
+
+//Crowns game class
+class Crowns extends Gambler {
+  constructor() {
+    super();
+    this._betPlace = 0;
+    this._correctCounter = 0;
+    this._dice = [0, 0, 0]; //array for dice values, 0's are just placeholders
+    this._dieImages = [ //array for the die images
+      "https://image.flaticon.com/icons/svg/0/751.svg", //1
+      "https://image.flaticon.com/icons/svg/0/2.svg", //2
+      "https://image.flaticon.com/icons/svg/0/255.svg", //3
+      "https://image.flaticon.com/icons/svg/0/963.svg", //4
+      "https://image.flaticon.com/icons/svg/0/780.svg", //5
+      "https://image.flaticon.com/icons/svg/0/165.svg"] //6
+}
+
+  update() {
+    this.updateStorage();
+    document.getElementById("cash").innerHTML = this._money;
+    document.getElementById("currentBet").innerHTML = this._bet;
+  }
+
+  rollDice() {
+    for(var i=0; i<this._dice.length; i++) {
+      this._dice[i] = Math.floor(Math.random()*6+1);
+      var dice = document.getElementById(i+10);
+      dice.src = this._dieImages[this._dice[i] - 1];
+    }
+    console.log(this._dice); //debugging
+  }
+
+   setBetPlace(location) { //sets the bet place equal to whatever div is clicked
+     if(this._betPlace !== 0) {
+       document.getElementById(this._betPlace).style.backgroundColor = "lightgray"; //changes betplace back to light gray
+     }
+     this._betPlace = location; //sets betplace equal to the div selected
+     document.getElementById(location).style.backgroundColor = "lightblue"; //changes new betplace to blue
+     this.update(); //updates display
+
+     console.log("bet place is: " + this._betPlace); //debugging
+ }
+
+   play() { //main game function
+     if(this._betPlace != 0) { //if betplace has been chosen
+       if(this._money >= this._bet) { //if enough money
+         this.rollDice(); //rolls dice
+         for(var i=0; i<this._dice.length; i++) { //for loop to run for each die rolled
+           if(this._dice[i] == this._betPlace) { //if selected die is equal to betplace
+             this.changeMoney(this._bet); //add bet to total
+             this._correctCounter += 1; //add counter for number correct
+
+             console.log(this._dice[i] + " was equal to " + this._betPlace); //debugging
+           }
+
+           else { //if not equal (debugging)
+             console.log(this._dice[i] + " was not equal to " + this._betPlace); //debugging
+           }
+         }
+         if(this._correctCounter == 0) { //if none correct
+
+           this.changeMoney(-this._bet); //debugging
+         }
+       } else { //if not enough money
+         alert("Not enough money");
+       }
+       this._correctCounter = 0; //resets correct counter
+       this.update(); //updates display
+    } else { //if bet place hasn't been chosen
+      alert("You need to set your bet place first!");
+    }
+  }
+}
+
 var p1 = new Craps(); //new craps game
 var player1 = new HiLo(); //new hilo game
+var crownsPlayer = new Crowns(); //new crowns game
