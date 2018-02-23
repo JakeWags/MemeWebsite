@@ -2,7 +2,7 @@ class Clicker{
   constructor(){
     this._totalClicks = parseInt(localStorage.getItem("totalClicks")) || 0;
     this._clickBonus = parseInt(localStorage.getItem("clickBonus")) || 1;
-    this._upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 1;
+    this._upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 100;
     this._clickerImageSelector = parseInt(localStorage.getItem("clickerImageSelector")) || 0;
     this._clickerImages = [
      /* 1 */"clickerImages/southpark1.jpg",
