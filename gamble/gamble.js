@@ -336,8 +336,7 @@ class Crowns extends Gambler {
            }
          }
          if(this._correctCounter == 0) { //if none correct
-
-           this.changeMoney(-this._bet); //debugging
+           this.changeMoney(-this._bet); //subtract bet from wallet
          }
        } else { //if not enough money
          alert("Not enough money");
