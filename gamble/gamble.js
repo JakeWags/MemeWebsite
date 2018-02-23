@@ -310,7 +310,7 @@ class Crowns extends Gambler {
 
    setBetPlace(location) { //sets the bet place equal to whatever div is clicked
      if(this._betPlace !== 0) {
-       document.getElementById(this._betPlace).style.backgroundColor = "lightgray"; //changes betplace back to light gray
+       document.getElementById(this._betPlace).style.backgroundColor = "white"; //changes betplace back to light gray
      }
      this._betPlace = location; //sets betplace equal to the div selected
      document.getElementById(location).style.backgroundColor = "lightblue"; //changes new betplace to blue
