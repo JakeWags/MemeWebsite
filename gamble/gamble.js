@@ -179,12 +179,12 @@ class Craps extends Gambler{
     this._isFirstRoll = true; //first roll of game
     this._gameStatus = "Roll!"; //tells the player to roll
     this._dieImages = [ //array for the die images
-      "gambleImages/dice1.svg", //1
-      "gambleImages/dice2.svg", //2
-      "gambleImages/dice3.svg", //3
-      "gambleImages/dice4.svg", //4
-      "gambleImages/dice5.svg", //5
-      "gambleImages/dice6.svg"] //6
+      "../gambleImages/dice1.svg", //1
+      "../gambleImages/dice2.svg", //2
+      "../gambleImages/dice3.svg", //3
+      "../gambleImages/dice4.svg", //4
+      "../gambleImages/dice5.svg", //5
+      "../gambleImages/dice6.svg"] //6
 }
 
 get die1() {
@@ -285,12 +285,12 @@ class Crowns extends Gambler {
     this._correctCounter = 0;
     this._dice = [0, 0, 0]; //array for dice values, 0's are just placeholders
     this._dieImages = [ //array for the die images
-      "gambleImages/dice1.svg", //1
-      "gambleImages/dice2.svg", //2
-      "gambleImages/dice3.svg", //3
-      "gambleImages/dice4.svg", //4
-      "gambleImages/dice5.svg", //5
-      "gambleImages/dice6.svg"] //6
+      "../gambleImages/dice1.svg", //1
+      "../gambleImages/dice2.svg", //2
+      "../gambleImages/dice3.svg", //3
+      "../gambleImages/dice4.svg", //4
+      "../gambleImages/dice5.svg", //5
+      "../gambleImages/dice6.svg"] //6
 }
 
   update() {
