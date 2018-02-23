@@ -179,12 +179,12 @@ class Craps extends Gambler{
     this._isFirstRoll = true; //first roll of game
     this._gameStatus = "Roll!"; //tells the player to roll
     this._dieImages = [ //array for the die images
-      "https://image.flaticon.com/icons/svg/0/751.svg", //1
-      "https://image.flaticon.com/icons/svg/0/2.svg", //2
-      "https://image.flaticon.com/icons/svg/0/255.svg", //3
-      "https://image.flaticon.com/icons/svg/0/963.svg", //4
-      "https://image.flaticon.com/icons/svg/0/780.svg", //5
-      "https://image.flaticon.com/icons/svg/0/165.svg"] //6
+      "gambleImages/dice1.svg", //1
+      "gambleImages/dice2.svg", //2
+      "gambleImages/dice3.svg", //3
+      "gambleImages/dice4.svg", //4
+      "gambleImages/dice5.svg", //5
+      "gambleImages/dice6.svg"] //6
 }
 
 get die1() {
@@ -285,12 +285,12 @@ class Crowns extends Gambler {
     this._correctCounter = 0;
     this._dice = [0, 0, 0]; //array for dice values, 0's are just placeholders
     this._dieImages = [ //array for the die images
-      "https://image.flaticon.com/icons/svg/0/751.svg", //1
-      "https://image.flaticon.com/icons/svg/0/2.svg", //2
-      "https://image.flaticon.com/icons/svg/0/255.svg", //3
-      "https://image.flaticon.com/icons/svg/0/963.svg", //4
-      "https://image.flaticon.com/icons/svg/0/780.svg", //5
-      "https://image.flaticon.com/icons/svg/0/165.svg"] //6
+      "gambleImages/dice1.svg", //1
+      "gambleImages/dice2.svg", //2
+      "gambleImages/dice3.svg", //3
+      "gambleImages/dice4.svg", //4
+      "gambleImages/dice5.svg", //5
+      "gambleImages/dice6.svg"] //6
 }
 
   update() {

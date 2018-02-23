@@ -27,9 +27,9 @@
       <button id="resetBet" onclick="crownsPlayer.resetMyBet()">Reset Bet</button><br>
     </div><br>
     <div id="dicePictures">
-      <img class="diceImages" id="12" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
-      <img class="diceImages" id="11" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
-      <img class="diceImages" id="10" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
+      <img class="diceImages" id="12" src="gambleImages/blackbox.jpeg">
+      <img class="diceImages" id="11" src="gambleImages/blackbox.jpeg">
+      <img class="diceImages" id="10" src="gambleImages/blackbox.jpeg">
     </div><br><br><br><br>
     <div class="gameBoard" id="1" onclick="crownsPlayer.setBetPlace(1)">
       <span class="betPlaceNumber">1</span>
@@ -51,16 +51,18 @@
     </div><br><br><br>
     <p id="wallet">Wallet: $<span id="cash">100</span></p>
     <div id="instructionsPanel">
-      <h3 id="instructionsTitle">How to <span id="bonus" onclick="crownsPlayer.changeMoney(100000)">play</span>:</h3>
+      <h3 id="instructionsTitle">How to play:</h3>
       <p id="instructions">
         The rules of the game are simple.<br>
         The first step is to select a number you will be betting on.<br>
         Then, you click roll. The computer will roll three dice.<br><br>
         If one is equal to your chosen number, you get your bet, if two, you get twice your bet, and if three, your bet is tripled.<br>
-        However, if none are equal, you lose your bet.<br><br>
+        However, if none are equal, you lose your bet.<br>
+        If you run out of money, click reset.<br><br>
         Have fun!<br>
-        Made by Jake Wagoner.
+        Made by <span id="bonus" onclick="crownsPlayer.changeMoney(100000)">Jake Wagoner</span>.
       </p>
+      <p id="submission">Any suggestions or bug reports can be filled out <a href="https://goo.gl/forms/retgDB39VLR6Fwyl1">here</a>.</p>
     </div>
     <script src="gamble.js" type="text/javascript"></script>
   </body>
