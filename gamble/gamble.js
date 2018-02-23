@@ -280,9 +280,9 @@ play() {
 //Crowns game class
 class Crowns extends Gambler {
   constructor() {
-    super();
-    this._betPlace = 0;
-    this._correctCounter = 0;
+    super(); // calls parent constructor
+    this._betPlace = 0; //number betting on
+    this._correctCounter = 0; //amount of correct rolls
     this._dice = [0, 0, 0]; //array for dice values, 0's are just placeholders
     this._dieImages = [ //array for the die images
       "../gambleImages/dice1.svg", //1
@@ -293,24 +293,24 @@ class Crowns extends Gambler {
       "../gambleImages/dice6.svg"] //6
 }
 
-  update() {
-    this.updateStorage();
+  update() { //updates display
+    this.updateStorage(); //updates storage
     document.getElementById("cash").innerHTML = this._money;
     document.getElementById("currentBet").innerHTML = this._bet;
   }
 
-  rollDice() {
-    for(var i=0; i<this._dice.length; i++) {
-      this._dice[i] = Math.floor(Math.random()*6+1);
-      var dice = document.getElementById(i+10);
-      dice.src = this._dieImages[this._dice[i] - 1];
+  rollDice() { //rolls dice
+    for(var i=0; i<this._dice.length; i++) { //sets dice rolls to the three spots in array
+      this._dice[i] = Math.floor(Math.random()*6+1); //random 1-6
+      var dice = document.getElementById(i+10); //gets elements for dice images
+      dice.src = this._dieImages[this._dice[i] - 1]; //sets image src to dice image array spot
     }
     console.log(this._dice); //debugging
   }
 
    setBetPlace(location) { //sets the bet place equal to whatever div is clicked
-     if(this._betPlace !== 0) {
-       document.getElementById(this._betPlace).style.backgroundColor = "white"; //changes betplace back to light gray
+     if(this._betPlace !== 0) { //if bet place is not equal to 0
+       document.getElementById(this._betPlace).style.backgroundColor = "white"; //changes betplace back to white
      }
      this._betPlace = location; //sets betplace equal to the div selected
      document.getElementById(location).style.backgroundColor = "lightblue"; //changes new betplace to blue
