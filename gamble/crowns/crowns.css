@@ -10,13 +10,13 @@
   font-size: 20px;
   text-decoration-line: none;
 }
+body {
+  background-color: #c8cbd1;
+  font-family: verdana;
+  font-size: 16px;
+}
 #title {
   font-size: 24px;
-  font-family: verdana;
-}
-#instructions {
-  font-size: 16px;
-  font-family: verdana;
 }
 #instructionsPanel {
   height: 350px;
@@ -27,22 +27,16 @@
 }
 #instructionsTitle {
   font-size: 20px;
-  font-family: verdana;
-}
-#wallet {
-  font-size: 16px;
-  font-family: verdana;
 }
 .gameBoard {
   float:left;
   height: 50px;
   width: 50px;
   border: 1px solid black;
-  background-color: lightgray;
+  background-color: white;
 }
 .betPlaceNumber {
   font-size: 44px;
-  font-family: verdana;
 }
 .diceImages {
   float: left;
@@ -51,10 +45,5 @@
   margin-right: 10px;
 }
 #EV__title {
-  font-family:verdana;
   font-size:24px;
-}
-#EV__math {
-  font-family:verdana;
-  font-size:16px;
 }
