@@ -32,19 +32,20 @@ body {
 }
 #explanation {
   float: right;
-  font-family: Arial;
+  font-family: verdana;
   font-size: 16px;
   overflow: auto;
   margin: 5px;
 }
 #instructionsArea {
   float: right;
-  margin-right: 100px;
+  margin-right: 25px;
   overflow: auto;
-  border: 3px solid black;
+  border: 3px solid #ea2e2e;
   height: 344px;
   width: 300px;
-  background-color: lightblue;
+  background-color: #182233;
+  color: #ffffff;
 }
 #instructionsTitle {
   font-size: 24px;
