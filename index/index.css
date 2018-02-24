@@ -2,29 +2,15 @@
   background-color: #182233;
   padding-bottom: 30px;
   border-bottom: #ea2e2e solid 4px;
-}
-.navigation {
-  padding-left: 15px;
-  color: white;
   font-family: verdana;
   font-size: 20px;
-  text-decoration-line: none;
 }
-#welcome {
-  font-size:22px;
+#navbar a {
+  text-decoration:none;
+  padding-left: 15px;
+  color: #ffffff;
 }
-#intro, #submission {
-  font-family: verdana;
-  font-size: 16px;
-}
-#Brownbears {
-  font-family: verdana;
-}
-#patrick {
-  border: 2px solid black;
-  float: right;
-  width: 300px;
-  height: 200px;
-  margin-right: 100px;
-  margin-top: 5px;
+#navbar .current {
+  color: #ea2e2e;
+  font-weight: bold;
 }
