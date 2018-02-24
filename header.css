@@ -42,8 +42,13 @@ header .dropdown-content {
   min-width: 80px;
   padding: 10px 12px;
   border: 2px solid #ea2e2e;
+  z-index: 1;
 }
 
 header .dropdown:hover .dropdown-content {
   display: block;
+}
+
+header .dropdown a:hover, header .dropdown-content a:hover {
+  color: #c6d7f2;
 }
