@@ -44,6 +44,6 @@ header .dropdown-content {
   border: 2px solid #ea2e2e;
 }
 
-header .dropdown:hover .dropdown-content, header .dropdown:active .dropdown-content {
+header .dropdown:hover .dropdown-content {
   display: block;
 }
