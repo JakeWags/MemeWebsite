@@ -7,7 +7,7 @@ header {
   border-bottom: 3px #ea2e2e solid;
 }
 
-header a, header span {
+header a {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
@@ -49,6 +49,6 @@ header .dropdown:hover .dropdown-content {
   display: block;
 }
 
-header .dropdown a:hover, header .dropdown-content a:hover {
+header .dropdown a:hover, header .dropdown-content a:hover, header a:hover {
   color: #c6d7f2;
 }
