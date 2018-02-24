@@ -1,0 +1,31 @@
+/* Header */
+header {
+  background: #182233;
+  color: #ffffff;
+  padding-top: 10px;
+  min-height: 50px;
+  border-bottom: 3px #ea2e2e solid;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+}
+
+header li {
+  float:left;
+  display:inline;
+  padding-left: 15px;
+}
+
+header .current a{
+  font-weight: bold;
+  color: #ea2e2e;
+}

@@ -1,24 +1,12 @@
-#navbar {
-  background-color: #182233;
-  padding-bottom: 30px;
-  border-bottom: #ea2e2e solid 4px;
-  font-family: verdana;
-  font-size: 20px;
-}
-#navbar a {
-  text-decoration:none;
-  padding-left: 15px;
-  color: #ffffff;
-}
-#navbar .current {
-  color: #ea2e2e;
-  font-weight: bold;
-}
+/* Global */
 body {
-  background-color: #c8cbd1;
   font-family: verdana;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
+
+/* Everything Else */
 #title {
   font-size: 24px;
 }

@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Shall we play?</title>
     <link rel="stylesheet" type="text/css" href="homepage.css">
+    <link rel="stylesheet" type="text/css" href="../header.css">
     <meta name="viewport" content="width=device-width">
   </head>
+
   <body>
-    <nav id="navbar">
-      <a href="../index.html">Home</a>
-      <a href="../Devito/dannyDevito.html">Devito</a>
-      <a href="../games/gamepage.html">Games</a>
-      <a class="current" href="../gamble/homepage.html">Gamble</a>
-    </nav>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Devito/dannyDevito.html">Devito</a></li>
+            <li><a href="../games/gamepage.html">Games</a></li>
+            <li class="current"><a href="../gamble/homepage.html">Gamble</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <h1 id="title">Welcome to the casino!</h1>
     <p id="note">Click the images to load the game!</p><br>
     <button id="resetButtonHomepage" onclick="player1.restartGame()">Reset all</button><br><br>

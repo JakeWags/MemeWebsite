@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Hi Lo</title>
     <link href="HiLo.css" rel="stylesheet" type="text/css">
+    <link href="../../header.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
   </head>
   <body>
-    <nav id="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="../../Devito/dannyDevito.html">Devito</a>
-      <a href="../../games/gamepage.html">Games</a>
-      <a class="current" href="../../gamble/homepage.html">Gamble</a>
-    </nav>
+
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../Devito/dannyDevito.html">Devito</a></li>
+            <li><a href="../../games/gamepage.html">Games</a></li>
+            <li class="current"><a href="../../gamble/homepage.html">Gamble</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <h2 id="title">Hi Lo</h2>
     <button id="gameButton" onclick="player1.makeNewGame()">Start Game</button>
     <button id="restart" onclick="player1.restartGame()">Restart</button>

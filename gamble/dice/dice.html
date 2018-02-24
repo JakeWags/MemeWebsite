@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Oh my</title>
     <link rel="stylesheet" type="text/css" href="dice.css">
-    <!--<meta name="viewport" content="width=device-width">-->
+    <link href="../../header.css" type="text/css" rel="stylesheet">
   </head>
+
   <body>
-    <nav id="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="../../Devito/dannyDevito.html">Devito</a>
-      <a href="../../games/gamepage.html">Games</a>
-      <a class="current" href="../../gamble/homepage.html">Gamble</a>
-    </nav>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../Devito/dannyDevito.html">Devito</a></li>
+            <li><a href="../../games/gamepage.html">Games</a></li>
+            <li class="current"><a href="../../gamble/homepage.html">Gamble</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <h2 id="headerTitle">The dice will decide your fate.</h2>
     <div id="instructionsArea">
       <h6 id="instructionsTitle">Rules/Explanation</h6>
@@ -30,8 +39,8 @@
     <p id="maxBetDisplay"><strong>Current Max Bet:</strong> $<span id="currentMaxBet">5000</span> <em>per guess</em></p>
     <button id="changeMaxBet" onclick="p1.changeMaxBet()">Upgrade Max bet: $<span id="maxBetCost">1000000</span></button><br><br>
     <div id="gameSpace">
-      <img id="die2" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
-      <img id="die1" src="https://media.wnyc.org/i/620/372/l/80/1/blackbox.jpeg">
+      <img id="die2" src="../gambleImages/blackbox.jpeg">
+      <img id="die1" src="../gambleImages/blackbox.jpeg">
       <button id="play" onclick="p1.play()">Roll</button>
       <button id="increaseBet" onclick="p1.changeBet(5)">Bet +5</button>
       <button id="decreaseBet" onclick="p1.changeBet(-5)">Bet -5</button>
