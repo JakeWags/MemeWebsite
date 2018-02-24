@@ -7,7 +7,7 @@ header {
   border-bottom: 3px #ea2e2e solid;
 }
 
-header a {
+header a, header span {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
@@ -22,10 +22,28 @@ header ul {
 header li {
   float:left;
   display:inline;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
-header .current a{
+header .current a {
   font-weight: bold;
   color: #ea2e2e;
+}
+
+header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #182233;
+  min-width: 80px;
+  padding: 10px 12px;
+  border: 2px solid #ea2e2e;
+}
+
+header .dropdown:hover .dropdown-content, header .dropdown:active .dropdown-content {
+  display: block;
 }
