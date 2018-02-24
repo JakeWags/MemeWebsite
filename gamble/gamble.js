@@ -293,17 +293,14 @@ class Crowns extends Gambler {
       '../gambleImages/dice6.svg'] //6
 }
 
-<<<<<<< HEAD
   update () {
     this.updateStorage ();
     document.getElementById ('cash').innerHTML = this._money;
     document.getElementById ('currentBet').innerHTML = this._bet;
-=======
   update () { //updates display
     this.updateStorage (); //updates storage
     document.getElementById ("cash").innerHTML = this._money;
     document.getElementById ("currentBet").innerHTML = this._bet;
->>>>>>> 75da020d51a7ce6693724a50d84684d2bf3854d5
   }
 
   rollDice () { //rolls dice
@@ -316,13 +313,10 @@ class Crowns extends Gambler {
   }
 
    setBetPlace (location) { //sets the bet place equal to whatever div is clicked
-<<<<<<< HEAD
      if (this._betPlace !== 0) {
        document.getElementById (this._betPlace).style.backgroundColor = 'lightgray'; //changes betplace back to light gray
-=======
      if (this._betPlace !== 0) { //if bet place is not equal to 0
        document.getElementById (this._betPlace).style.backgroundColor = "white"; //changes betplace back to white
->>>>>>> 75da020d51a7ce6693724a50d84684d2bf3854d5
      }
      this._betPlace = location; //sets betplace equal to the div selected
      document.getElementById (location).style.backgroundColor = 'lightblue'; //changes new betplace to blue
