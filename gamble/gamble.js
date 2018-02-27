@@ -297,6 +297,7 @@ class Crowns extends Gambler {
     this.updateStorage (); //updates storage
     document.getElementById ("cash").innerHTML = this._money;
     document.getElementById ("currentBet").innerHTML = this._bet;
+    document.getElementById ("currentMaxBet").innerHTML = this._maxBet;
   }
 
   rollDice () { //rolls dice
