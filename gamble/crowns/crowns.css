@@ -15,7 +15,7 @@ body {
 }
 #instructionsPanel {
   height: 350px;
-  width: 100%;
+  width: 90%;
   border: 2px solid #ea2e2e;
   background-color: #182233;
   overflow-y: auto;
