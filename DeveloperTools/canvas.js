@@ -5,7 +5,7 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-c.fillStyle = "#182233";
+c.fillStyle = "rgb(117, 115, 110)";
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 var mouse = {
