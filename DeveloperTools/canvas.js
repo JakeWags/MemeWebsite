@@ -39,7 +39,7 @@ class Circle {
     this.dy = dy;
     this.radius = radius;
     this.minRadius = this.radius;
-    this.maxRadius = Math.floor(Math.random() * 40 + 10);
+    this.maxRadius = Math.floor(Math.random() * 15 + 10);
     this.color = Math.floor(Math.random() * 6 + 1);
    // this.red = Math.floor(Math.random() * 255);
    // this.green = Math.floor(Math.random() * 255);
@@ -67,8 +67,8 @@ class Circle {
     this.y += this.dy; //y velocity
 
     //interactivity
-    if(mouse.x - this.x < 50 && mouse.x - this.x > -50
-      && mouse.y - this.y < 50 && mouse.y - this.y > -50
+    if(mouse.x - this.x < 40 && mouse.x - this.x > -40
+      && mouse.y - this.y < 40 && mouse.y - this.y > -40
     ) {
       if (this.radius < this.maxRadius) {
       this.radius += 3;
