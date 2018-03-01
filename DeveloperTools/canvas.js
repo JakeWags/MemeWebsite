@@ -100,7 +100,7 @@ function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
 
-  c.fillStyle = "rgb(117, 115, 110)";
+  c.fillStyle = "#40454f";
     c.fillRect(0, 0, innerWidth, innerHeight);
    for (var i = 0; i < circleArray.length; i++) {
       circleArray[i].update();
