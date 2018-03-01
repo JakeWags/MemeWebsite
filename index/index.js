@@ -1,16 +1,16 @@
-var password = 'chicken'
+class PasswordInput {
+  constructor() {
+    this.password = 'chicken'
+    this.canvasLink = document.getElementById('canvas');
 
-function password () {
-   if (document.getElementById('passwordForm').elements[0].value === password) {
-     document.getElementById('developerTools').href = 'DeveloperTools/developer.html';
-   } else {
-     alert ('Wrong password');
-     document.getElementById('passwordForm').reset();
-   }
-}
-
-var meow = {
-   tester: function test () {
-    console.log('test');
   }
+  passwordPrompt() {
+    if(prompt('Password:') === this.password) {
+      this.canvasLink.innerHTML = 'canvas';
+      this.canvasLink.href = 'DeveloperTools/canvas.html';
+    } else {
+      alert('Access Denied');
+    }
 }
+}
+var a = new PasswordInput();

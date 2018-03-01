@@ -9,7 +9,11 @@ body {
 
 .container {
   width:100%;
-  text-align:center;
+}
+
+/* Section */
+section {
+  text-align: center;
 }
 
 /* Showcase */
@@ -35,4 +39,13 @@ body {
 .contact a {
   color: #ea2e2e;
   text-decoration: none;
+}
+
+/* Developer Tools */
+#developerModeButton {
+  width: 20%;
+  background-color: #ffffff;
+  font-size: 16px;
+  color: #182233;
+  border: none;
 }
