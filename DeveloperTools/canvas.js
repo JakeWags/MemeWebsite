@@ -47,8 +47,6 @@ class Circle {
   }
 
   draw() {
-    c.fillStyle = "rgb(117, 115, 110)";
-    c.fillRect(0, 0, canvas.width, canvas.height);
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     c.fillStyle = colorArray[this.color];
@@ -102,6 +100,8 @@ function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
 
+  c.fillStyle = "rgb(117, 115, 110)";
+    c.fillRect(0, 0, innerWidth, innerHeight);
    for (var i = 0; i < circleArray.length; i++) {
       circleArray[i].update();
     }
