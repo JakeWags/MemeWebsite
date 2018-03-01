@@ -5,9 +5,6 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-c.fillStyle = "rgb(117, 115, 110)";
-c.fillRect(0, 0, canvas.width, canvas.height);
-
 var mouse = {
   x: undefined,
   y: undefined
@@ -50,6 +47,8 @@ class Circle {
   }
 
   draw() {
+    c.fillStyle = "rgb(117, 115, 110)";
+    c.fillRect(0, 0, canvas.width, canvas.height);
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     c.fillStyle = colorArray[this.color];
