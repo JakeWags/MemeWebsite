@@ -5,6 +5,9 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
+c.fillStyle = "#182233";
+c.fillRect(0, 0, canvas.width, canvas.height);
+
 var mouse = {
   x: undefined,
   y: undefined
@@ -22,6 +25,15 @@ window.addEventListener('resize',
     canvas.height = window.innerHeight;
 })
 
+var colorArray = [
+  '#ea2e2e',
+  '#b4cef7',
+  '#f2eb65',
+  '#f986f6',
+  '#b4c4c4',
+  '#ffc730',
+  ]
+
 class Circle {
   constructor(x, y, dx, dy, radius) {
     this.x = x;
@@ -31,15 +43,17 @@ class Circle {
     this.radius = radius;
     this.minRadius = this.radius;
     this.maxRadius = Math.floor(Math.random() * 40 + 10);
-    this.red = Math.floor(Math.random() * 255);
-    this.green = Math.floor(Math.random() * 255);
-    this.blue = Math.floor(Math.random() * 255);
+    this.color = Math.floor(Math.random() * 6 + 1);
+   // this.red = Math.floor(Math.random() * 255);
+   // this.green = Math.floor(Math.random() * 255);
+   // this.blue = Math.floor(Math.random() * 255);
   }
 
   draw() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.fillStyle = `rgba(${this.red}, ${this.green}, ${this.blue}, 1)`;
+    c.fillStyle = colorArray[this.color];
+    //c.fillStyle = `rgba(${this.red}, ${this.green}, ${this.blue}, 1)`;
     c.fill();
   }
 
