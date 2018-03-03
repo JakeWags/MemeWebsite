@@ -16,6 +16,13 @@ window.addEventListener('mousemove',
       mouse.y = event.y;
 })
 
+window.addEventListener('click',
+  function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    console.log(event);
+  })
+
 window.addEventListener('resize',
   function() {
     canvas.width = window.innerWidth;
@@ -83,13 +90,12 @@ class Circle {
 
 var circleArray = [];
 
-for (var i = 0; i < 800; i++) {
-  var radius = Math.random() * 3 + 1;
+for (var i = 0; i < 1000; i++) {
+  var radius = Math.floor(Math.random() * 3 + 1);
   var x = Math.floor(Math.random() * (innerWidth - radius * 2) + radius);
   var y = Math.floor(Math.random() * (innerHeight - radius * 2) + radius);
   var dy = (Math.random() - 0.5) * 2;
   var dx = (Math.random() - 0.5) * 2;
-
 
   circleArray.push(new Circle(x, y, dx, dy, radius));
 }
@@ -102,6 +108,7 @@ function animate() {
 
   c.fillStyle = "#40454f";
     c.fillRect(0, 0, innerWidth, innerHeight);
+
    for (var i = 0; i < circleArray.length; i++) {
       circleArray[i].update();
     }
