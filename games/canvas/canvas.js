@@ -1,7 +1,9 @@
 var canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight - 63;
+
+innerHeight -= 63; //header is 63 pixels tall, must compensate for accurate collison and spawn
 
 var c = canvas.getContext('2d');
 
@@ -13,20 +15,20 @@ var mouse = {
 window.addEventListener('mousemove',
     function(event) {
       mouse.x = event.x;
-      mouse.y = event.y;
+      mouse.y = event.y - 63; //header is 63 pixels tall
 })
 
 window.addEventListener('click',
   function(event) {
     mouse.x = event.x;
-    mouse.y = event.y;
+    mouse.y = event.y - 63;
     console.log(event);
   })
 
 window.addEventListener('resize',
   function() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight - 63;
 })
 
 var colorArray = [
@@ -66,7 +68,7 @@ class Circle {
       this.dx = -this.dx;
     }
 
-    if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+    if (this.y + this.radius > (innerHeight) || this.y - this.radius < 0) {
       this.dy = -this.dy;
     }
 
