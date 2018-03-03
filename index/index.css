@@ -27,6 +27,10 @@ section {
   padding-top: 10px;
 }
 
+#showcase a {
+  color: #ea2e2e;
+  text-decoration: none;
+}
 /* Contact */
 .contact {
   margin-top: 20px;
