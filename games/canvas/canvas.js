@@ -41,14 +41,14 @@ var colorArray = [
   ]
 
 class Circle {
-  constructor(x, y, dx, dy, radius) {
+  constructor(x, y, dx, dy, radius, maxRadius) {
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
     this.radius = radius;
     this.minRadius = this.radius;
-    this.maxRadius = Math.floor(Math.random() * 15 + 10);
+    this.maxRadius = maxRadius;
     this.color = Math.floor(Math.random() * 6 + 1);
    // this.red = Math.floor(Math.random() * 255);
    // this.green = Math.floor(Math.random() * 255);
@@ -93,13 +93,14 @@ class Circle {
 var circleArray = [];
 
 for (var i = 0; i < 1000; i++) {
-  var radius = Math.floor(Math.random() * 3 + 1);
-  var x = Math.floor(Math.random() * (innerWidth - radius * 2) + radius);
-  var y = Math.floor(Math.random() * (innerHeight - radius * 2) + radius);
+  var radius = Math.floor(Math.random() * 6 + 1);
   var dy = (Math.random() - 0.5) * 2;
   var dx = (Math.random() - 0.5) * 2;
+  var x = Math.floor(Math.random() * (innerWidth - radius * 2) + radius);
+  var y = Math.floor(Math.random() * (innerHeight - radius * 2) + radius);
+  var maxRadius = Math.floor(Math.random() * 20 + 10);
 
-  circleArray.push(new Circle(x, y, dx, dy, radius));
+  circleArray.push(new Circle(x, y, dx, dy, radius, maxRadius));
 }
 
 console.log(circleArray);
