@@ -5,12 +5,19 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-window.addEventListener('resize',
-  function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    circle.recenter();
-  })
+var mousedown = false;
+
+var mouse = {
+  x: undefined,
+  y: undefined
+}
+
+  window.addEventListener('resize',
+    function() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      circle.recenter();
+    })
 
   window.addEventListener('keydown',
    function(e) {
@@ -24,6 +31,25 @@ window.addEventListener('resize',
       e.preventDefault();
       circle.jump();
   })
+
+  window.addEventListener('mousemove',
+    function(e) {
+      mouse.x = e.x;
+      mouse.y = e.y;
+      if(mousedown) {
+        circle.drag();
+      }
+    })
+
+    window.addEventListener('mousedown',
+      function() {
+        mousedown = true;
+      })
+
+    window.addEventListener('mouseup',
+      function() {
+        mousedown = false;
+      })
 
 class Circle {
     constructor() {
@@ -58,19 +84,18 @@ class Circle {
 }
 
   update() {
-    if ((this.y + this.radius) > this.bottomLine - this.dy) {
-      this.dy *= -1;
-    }
-
     this.y += this.dy;
 
-    if ((this.y + this.radius) > this.bottomLine - this.dy) {
+    if ((this.y + this.radius) > this.bottomLine - (this.dy - this.ay)) {
       this.isOnGround = true;
       this.dy = 0;
       this.ay = 0;
       console.log('on ground');
+      if ((this.y + this.radius) > this.bottomLine)  {
+          this.y = this.bottomLine - this.radius;
+      }
   } else {
-    this.dy += this.ay;
+      this.dy += this.ay;
   }
 
     this.draw();
@@ -91,6 +116,17 @@ class Circle {
     this.ay = 1;
     this.dy = 5;
   }
+
+  drag() {
+    if ((mouse.y + this.radius) > this.bottomLine)  {
+      this.y = this.bottomLine - this.radius;
+    } else {
+      this.x = mouse.x;
+      this.y = mouse.y;
+      this.dy = 5;
+      this.ay = 1;
+  }
+}
 }
 
 function animate() {
