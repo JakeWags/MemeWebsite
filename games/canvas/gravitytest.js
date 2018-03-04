@@ -72,7 +72,8 @@ class Circle {
     c.font = "30px verdana";
     c.textAlign = "center";
     c.fillStyle = "#ffffff";
-    c.fillText('Press space or tap!', innerWidth/2, innerHeight/4);
+    c.fillText('Press space, tap,', innerWidth/2, innerHeight/4);
+    c.fillText('or click and drag!', innerWidth/2, innerHeight/4 + 35);
 
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -87,7 +88,7 @@ class Circle {
   update() {
     this.y += this.dy;
 
-    if ((this.y + this.radius) > this.bottomLine - (this.dy) - (this.ay)) {
+    if ((this.y + this.radius) > this.bottomLine + (this.dy) + (this.ay)) {
       this.isOnGround = true;
       this.dy = 0;
       this.ay = 0;
