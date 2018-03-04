@@ -49,6 +49,7 @@ var mouse = {
     window.addEventListener('mouseup',
       function() {
         mousedown = false;
+        circle.drag();
       })
 
 class Circle {
@@ -118,14 +119,16 @@ class Circle {
   }
 
   drag() {
-    if ((mouse.y + this.radius) > this.bottomLine)  {
+    if ((mouse.y + this.radius) > this.bottomLine && mousedown)  {
       this.y = this.bottomLine - this.radius;
     } else {
       this.x = mouse.x;
       this.y = mouse.y;
+    }
+    if (!(mousedown)) {
       this.dy = 5;
       this.ay = 1;
-  }
+    }
 }
 }
 
