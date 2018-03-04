@@ -20,7 +20,8 @@ window.addEventListener('resize',
   })
 
   window.addEventListener('touchstart',
-    function(ev) {
+    function(e) {
+      e.preventDefault();
       circle.jump();
   })
 
@@ -44,7 +45,7 @@ class Circle {
     c.font = "30px verdana";
     c.textAlign = "center";
     c.fillStyle = "#ffffff";
-    c.fillText('Press space', innerWidth/2, innerHeight/4);
+    c.fillText('Press space or tap!', innerWidth/2, innerHeight/4);
 
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
