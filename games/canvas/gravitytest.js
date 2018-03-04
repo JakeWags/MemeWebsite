@@ -122,6 +122,8 @@ class Circle {
     if ((mouse.y + this.radius) > this.bottomLine && mousedown)  {
       this.y = this.bottomLine - this.radius;
     } else {
+      this.dy = 0;
+      this.ay = 0;
       this.x = mouse.x;
       this.y = mouse.y;
     }
