@@ -9,6 +9,7 @@ window.addEventListener('resize',
   function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    circle.recenter();
   })
 
   window.addEventListener('keydown',
@@ -30,7 +31,7 @@ class Circle {
       this.radius = 50;
       this.dy = 5;
       this.ay = 1;
-      this.bottomLine;
+      this.bottomLine = innerHeight/1.25;
       this.isOnGround = false;
 }
 
@@ -43,7 +44,7 @@ class Circle {
     c.font = "30px verdana";
     c.textAlign = "center";
     c.fillStyle = "#ffffff";
-    c.fillText('Press space or click to jump!', innerWidth/2, innerHeight/4);
+    c.fillText('Press space', innerWidth/2, innerHeight/4);
 
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -52,18 +53,17 @@ class Circle {
 
     c.beginPath();
     c.fillStyle = "#ea2e2e";
-    c.fillRect(0, 793, innerWidth, (innerHeight - (innerHeight - 793)))
+    c.fillRect(0, this.bottomLine, innerWidth, (innerHeight - (innerHeight - this.bottomLine)))
 }
 
   update() {
-    this.bottomLine = 800 - this.dy;
-    if ((this.y + this.radius) > this.bottomLine) {
+    if ((this.y + this.radius) > this.bottomLine - this.dy) {
       this.dy *= -1;
     }
 
     this.y += this.dy;
 
-    if ((this.y + this.radius) > this.bottomLine) {
+    if ((this.y + this.radius) > this.bottomLine - this.dy) {
       this.isOnGround = true;
       this.dy = 0;
       this.ay = 0;
@@ -83,6 +83,13 @@ class Circle {
       console.log("we jumped!");
   }
 }
+
+  recenter() {
+    this.x = innerWidth/2;
+    this.y = innerHeight/2;
+    this.ay = 1;
+    this.dy = 5;
+  }
 }
 
 function animate() {
