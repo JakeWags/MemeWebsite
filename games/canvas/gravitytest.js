@@ -19,7 +19,7 @@ window.addEventListener('resize',
     }
   })
 
-  window.addEventListener('click',
+  window.addEventListener('touchstart',
     function(ev) {
       circle.jump();
   })
