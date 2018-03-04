@@ -13,6 +13,7 @@ header a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
+  padding-right: 10px;
 }
 
 header ul {
@@ -40,7 +41,7 @@ header .dropdown-content {
   display: none;
   position: absolute;
   background-color: #182233;
-  min-width: 80px;
+  min-width: 100px;
   padding: 10px 12px;
   border: 2px solid #ea2e2e;
   z-index: 1;
