@@ -87,7 +87,7 @@ class Circle {
   update() {
     this.y += this.dy;
 
-    if ((this.y + this.radius) > this.bottomLine - (this.dy - this.ay)) {
+    if ((this.y + this.radius) > this.bottomLine - (this.dy) - (this.ay)) {
       this.isOnGround = true;
       this.dy = 0;
       this.ay = 0;
@@ -121,6 +121,7 @@ class Circle {
   drag() {
     if ((mouse.y + this.radius) > this.bottomLine && mousedown)  {
       this.y = this.bottomLine - this.radius;
+      this.x = mouse.x;
     } else {
       this.dy = 0;
       this.ay = 0;
