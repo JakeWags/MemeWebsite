@@ -35,7 +35,7 @@ var mouse = {
   window.addEventListener('mousemove',
     function(e) {
       mouse.x = e.x;
-      mouse.y = e.y;
+      mouse.y = e.y - 63;
       if(mousedown) {
         circle.drag();
       }
@@ -65,7 +65,7 @@ class Circle {
 
   draw() {
     c.beginPath();
-    c.fillStyle = "#182233";
+    c.fillStyle = "#4c495d";
     c.fillRect(0, 0, innerWidth, innerHeight);
 
     c.beginPath();
@@ -81,7 +81,7 @@ class Circle {
     c.fill();
 
     c.beginPath();
-    c.fillStyle = "#ea2e2e";
+    c.fillStyle = "#182233";
     c.fillRect(0, this.bottomLine, innerWidth, (innerHeight - (innerHeight - this.bottomLine)))
 }
 
