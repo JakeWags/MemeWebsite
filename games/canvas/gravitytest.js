@@ -21,10 +21,28 @@ var mouse = {
 
   window.addEventListener('keydown',
    function(e) {
-    if(e.keyCode === 32) {
-      circle.jump();
+     console.log(e.keyCode);
+    switch (e.keyCode) {
+      case 32:
+        circle.jump();
+      break;
+
+      case 37:
+        circle.move('left');
+      break;
+
+      case 39:
+        circle.move('right');
+      break;
     }
   })
+
+  window.addEventListener('keyup',
+    function(e) {
+      if(e.keyCode === 37 || e.keyCode === 39) {
+        circle.move('stop');
+      }
+    })
 
   window.addEventListener('touchstart',
     function(e) {
@@ -58,6 +76,8 @@ class Circle {
       this.y = innerHeight/2;
       this.radius = 50;
       this.dy = 5;
+      this.dx = 0;
+      this.ax = 0;
       this.ay = 1;
       this.bottomLine = innerHeight/1.25;
       this.isOnGround = false;
@@ -88,7 +108,7 @@ class Circle {
   update() {
     this.y += this.dy;
 
-    if ((this.y + this.radius) > this.bottomLine + (this.dy) + (this.ay)) {
+    if ((this.y + this.radius) > this.bottomLine) {
       this.isOnGround = true;
       this.dy = 0;
       this.ay = 0;
@@ -99,6 +119,9 @@ class Circle {
   } else {
       this.dy += this.ay;
   }
+
+    this.x += this.dx;
+    this.dx += this.ax;
 
     this.draw();
 }
@@ -134,6 +157,23 @@ class Circle {
       this.ay = 1;
     }
 }
+
+  move(direction) {
+    switch (direction) {
+      case 'left':
+        this.ax = -0.5;
+      break;
+
+      case 'right':
+        this.ax = 0.5;
+      break;
+
+      case 'stop':
+        this.ax = 0;
+        this.dx = 0;
+      break;
+        }
+    }
 }
 
 function animate() {
