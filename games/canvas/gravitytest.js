@@ -172,8 +172,8 @@ class Circle {
         this.ax = 0;
         this.dx = 0;
       break;
-        }
     }
+}
 }
 
 function animate() {
