@@ -46,7 +46,6 @@ var mouse = {
 
   window.addEventListener('touchstart',
     function(e) {
-      e.preventDefault();
       circle.jump();
   })
 
