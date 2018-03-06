@@ -119,6 +119,11 @@ class Circle {
       this.dy += this.ay;
   }
 
+    if (this.x > innerWidth) {
+      this.x = 1;
+    } else if (this.x < 1) {
+      this.x = innerWidth;
+    }
     this.x += this.dx;
     this.dx += this.ax;
 
