@@ -122,6 +122,9 @@ class Circle {
     this.x += this.dx;
     this.dx += this.ax;
 
+    if (this.dx === 0) {
+      this.ax = 0;
+    }
     this.draw();
 }
 
@@ -146,8 +149,7 @@ class Circle {
       this.y = this.bottomLine - this.radius;
       this.x = mouse.x;
     } else {
-      this.dy = 0;
-      this.ay = 0;
+      this.dy, this.ay, this.dx, this.ax = 0;
       this.x = mouse.x;
       this.y = mouse.y;
     }
@@ -168,8 +170,7 @@ class Circle {
       break;
 
       case 'stop':
-        this.ax = 0;
-        this.dx = 0;
+        this.ax *= -0.5;
       break;
     }
 }
