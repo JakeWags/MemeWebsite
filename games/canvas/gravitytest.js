@@ -53,21 +53,8 @@ var mouse = {
     function(e) {
       mouse.x = e.x;
       mouse.y = e.y - 63;
-      if(mousedown) {
-        circle.drag();
-      }
     })
 
-    window.addEventListener('mousedown',
-      function() {
-        mousedown = true;
-      })
-
-    window.addEventListener('mouseup',
-      function() {
-        mousedown = false;
-        circle.drag();
-      })
 
 class Circle {
     constructor() {
@@ -92,7 +79,7 @@ class Circle {
     c.textAlign = "center";
     c.fillStyle = "#ffffff";
     c.fillText('Press space, tap,', innerWidth/2, innerHeight/4);
-    c.fillText('or click and drag!', innerWidth/2, innerHeight/4 + 35);
+    c.fillText('or use the arrow keys!', innerWidth/2, innerHeight/4 + 35);
 
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -148,21 +135,6 @@ class Circle {
     this.ay = 1;
     this.dy = 5;
   }
-
-  drag() {
-    if ((mouse.y + this.radius) > this.bottomLine && mousedown)  {
-      this.y = this.bottomLine - this.radius;
-      this.x = mouse.x;
-    } else {
-      this.dy, this.ay, this.dx, this.ax = 0;
-      this.x = mouse.x;
-      this.y = mouse.y;
-    }
-    if (!(mousedown)) {
-      this.dy = 5;
-      this.ay = 1;
-    }
-}
 
   move(direction) {
     switch (direction) {
