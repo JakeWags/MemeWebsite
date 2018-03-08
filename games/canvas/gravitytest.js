@@ -5,7 +5,7 @@ canvas.height = window.innerHeight - 63;
 
 var c = canvas.getContext('2d');
 
-var mousedown = false;
+var keyup = true;
 
 var mouse = {
   x: undefined,
@@ -29,10 +29,12 @@ var mouse = {
 
       case 37:
         circle.move('left');
+             keyup = false;
       break;
 
       case 39:
         circle.move('right');
+             keyup = false;
       break;
     }
   })
@@ -40,6 +42,7 @@ var mouse = {
   window.addEventListener('keyup',
     function(e) {
       if(e.keyCode === 37 || e.keyCode === 39) {
+              keyup = true;
         circle.move('stop');
       }
     })
@@ -93,37 +96,35 @@ class Circle {
 
   update() {
     this.y += this.dy;
+    this.x += this.dx;
 
-    if ((this.y + this.radius) > this.bottomLine) {
-      this.isOnGround = true;
-      this.dy = 0;
-      this.ay = 0;
-      console.log('on ground');
-      if ((this.y + this.radius) > this.bottomLine)  {
-          this.y = this.bottomLine - this.radius;
-      }
+  if ((this.y + this.radius) > this.bottomLine) {
+    this.isOnGround = true;
+    this.dy = 0;
+    this.ay = 0;
+    this.y = this.bottomLine - this.radius;
+    console.log('on ground');
   } else {
       this.dy += this.ay;
   }
 
-    if (this.x > innerWidth) {
-      this.x = 1;
-    } else if (this.x < 1) {
-      this.x = innerWidth;
-    }
-
-    if (this.dx < 20) {
-    this.x += this.dx;
+  if (this.dx < 20 && this.dx > -20 || keyup) {
     this.dx += this.ax;
-  } else {
-    this.ax = 0;
   }
 
-    if (this.dx === 0) {
-      this.ax = 0;
-    }
+
+  if (this.x > innerWidth) {
+    this.x = 1;
+  } else if (this.x < 1) {
+    this.x = innerWidth;
+  }
+
+
+  if (this.dx === 0) {
+    this.ax = 0;
+  }
     this.draw();
-}
+  }
 
   jump(e) {
     if(this.isOnGround) {
@@ -131,12 +132,13 @@ class Circle {
       this.ay = 1;
       this.isOnGround = false;
       console.log("we jumped!");
+    }
   }
-}
 
   recenter() {
     this.x = innerWidth/2;
-    this.y = innerHeight/2;
+    this.bottomLine = innerHeight/1.25;
+    this.y = this.bottomLine - this.radius;
     this.ay = 1;
     this.dy = 5;
   }
