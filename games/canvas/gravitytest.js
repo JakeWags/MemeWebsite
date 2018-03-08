@@ -111,8 +111,13 @@ class Circle {
     } else if (this.x < 1) {
       this.x = innerWidth;
     }
+
+    if (this.dx < 20) {
     this.x += this.dx;
     this.dx += this.ax;
+  } else {
+    this.ax = 0;
+  }
 
     if (this.dx === 0) {
       this.ax = 0;
