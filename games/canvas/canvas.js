@@ -3,7 +3,7 @@ var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight - 63;
 
-innerHeight -= 63; //header is 63 pixels tall, must compensate for accurate collison and spawn
+//innerHeight -= 63; //header is 63 pixels tall, must compensate for accurate collison and spawn
 
 var c = canvas.getContext('2d');
 
