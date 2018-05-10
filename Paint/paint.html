@@ -1,12 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="dannyDevito.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="paint.css">
     <link rel="stylesheet" type="text/css" href="../header.css">
-    <link rel="icon" href="http://piq.codeus.net/static/media/userpics/piq_254324_400x400.png">
-    <title>Surprise!</title>
-    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title></title>
   </head>
   <body>
     <header>
@@ -14,7 +13,7 @@
         <nav>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a class="current" href="../Devito/dannyDevito.html">Devito</a></li>
+            <li><a class= "current" href="../Paint/paint.html">Paint</a></li>
             <li>
               <div class="dropdown">
                 <a href="../games/gamepage.html">Games</a>
@@ -39,9 +38,16 @@
         </nav>
       </div>
     </header>
-    <button id="devitoButton" onclick="dannyDevito();">Click me for a surprise</button><br />
-      <img id="devitoPng">
-    <script type="text/javascript" src="dannyDevito.js"></script>
-  </body>
 
+    <div class="topbar">
+      <button id="undo">Undo</button>
+      <button id="clear">Clear</button>
+      <input type="color" id="colorpicker">
+        <span id="brushsizenumber">10</span>
+      <input type="range" id="brushsize" min="1" max="50" value="10">
+      <span>Click and drag to draw!</span>
+    </div>
+    <canvas></canvas>
+    <script src="paint.js"></script>
+  </body>
 </html>
